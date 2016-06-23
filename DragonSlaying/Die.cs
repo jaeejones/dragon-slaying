@@ -23,8 +23,19 @@ namespace DragonSlaying
         /// </summary>
         /// <param name="numberOfSides">The number of sides on the Die</param>
         public Die(int numberOfSides)
-        {
-            // TODO
+        {   // TODO
+
+            int numberOfSides = 6;
+
+            get
+             {
+                return numberOfSides;
+             } 
+            set
+               {
+                numberOfSides = 6;
+            }   if (numberOfSides > 0)
+                score = 0;  
         }
 
         /// <summary>
@@ -34,7 +45,32 @@ namespace DragonSlaying
         public int Roll()
         {
             // TODO
-            throw new NotImplementedException();
+            Random RND = new Random();
+            int dice = RND.Next(1, 7);
+            switch (dice)
+            {
+                case 1:
+                    Console.WriteLine("1");
+                    break;
+                case 2:
+                    Console.WriteLine("2");
+                    break;
+                case 3:
+                    Console.WriteLine("3");
+                    break;
+                case 4:
+                    Console.WriteLine("4");
+                    break;
+                case 5:
+                    Console.WriteLine("5");
+                    break;
+                case 6:
+                    Console.WriteLine("6");
+                    break;
+                default:
+                    Console.WriteLine("Number Unknown");
+                    break;
+            }
         }
     }
 }

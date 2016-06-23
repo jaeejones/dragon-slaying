@@ -12,6 +12,7 @@ namespace DragonSlaying
         public int Offense { get; set; }
         public int Defense { get; set; }
         public int MaxHitPoints { get; set; }
+        public int HitPoints { get; set; }
         // TODO: Add any necessary fields
         
         /// <summary>
@@ -23,7 +24,7 @@ namespace DragonSlaying
             get
             {
                 // TODO
-                throw new NotImplementedException();
+                return points;
             }
             set
             {
@@ -45,7 +46,14 @@ namespace DragonSlaying
         public override string ToString()
         {
             // TODO
-            throw new NotImplementedException();
+            var sb = new StringBuilder();
+
+            sb.AppendLine(Name);
+            sb.AppendLine("==========");
+            sb.AppendFormat("Off: {0}\tDef: {1}\n", Offense, Defense);
+            sb.AppendFormat("HP: {0}/{1}\n", HitPoints, MaxHitPoints);
+
+            return sb.ToString();
         }
 
 
@@ -57,7 +65,15 @@ namespace DragonSlaying
         public bool IsAlive()
         {
             // TODO
-            throw new NotImplementedException();
+            if (HitPoints > 0)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
